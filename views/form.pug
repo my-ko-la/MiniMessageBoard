@@ -1,0 +1,42 @@
+extends layout
+
+mixin form(method, action, inputs, submitLabel)
+    form(method=method action=action)
+      if inputs
+        each input in inputs
+            case input.type
+              when 'textarea'
+                label #{input.label}
+                  textarea(placeholder=input.placeholder required=input.required name=input.name id=input.id class=input.class maxlength=input.maxlength autofocus=input.autofocus autocomplete = input.autocomplete)
+              when 'checkbox'
+              when 'radio'
+                label
+                  input(type=input.type name=input.name id=input.id class=input.class required=input.required)
+                  | #{" " + input.label}
+              default
+                label #{input.label}
+                  input(type=input.type min=input.min max=input.max multiple=input.multiple pattern=input.pattern step=input.step height=input.height width=input.width placeholder=input.placeholder required=input.required name=input.name id=input.id class=input.class maxlength=input.maxlength autofocus=input.autofocus autocomplete = input.autocomplete)
+      input(type="submit" value=submitLabel class="submit-btn")
+
+        
+block content
+    .main#formTitle
+            h1= title
+            +form("post", "/new", [
+                {
+                    label: "Your name",
+                    placeholder: "enter your name",
+                    required: true,
+                    type: "text",
+                    name: "name",
+                    autofocus: true
+                },
+                {
+                    label: "Your message",
+                    placeholder: "enter your message",
+                    required: true,
+                    type: "textarea",
+                    name: "message",
+                    autofocus: false
+                }
+            ], "Publish")
