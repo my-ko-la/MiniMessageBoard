@@ -1,16 +1,29 @@
 var express = require("express");
 var router = express.Router();
 
+var d = new Date();
+
+var datestring =
+  d.getDate() +
+  "-" +
+  (d.getMonth() + 1) +
+  "-" +
+  d.getFullYear() +
+  " " +
+  d.getHours() +
+  ":" +
+  d.getMinutes();
+
 const messages = [
   {
     text: "Hi there!",
     user: "Obi-Wan Kenobi",
-    added: new Date(),
+    added: datestring,
   },
   {
     text: "General Kenobi!",
     user: "General Grievous",
-    added: new Date(),
+    added: datestring,
   },
 ];
 

@@ -1,10 +1,11 @@
 extends layout
 
 mixin messageBox(user,text,added)
-  .msg-box
-    p.user #{user}
-    p #{text}
-    p #{added}
+  div(class=`msg-box cs-shadow`)
+    div.msgBoxHeader
+      p.user #{user}
+      p.added #{added}
+    p.text >> #{text}
 
 block content
   .main
