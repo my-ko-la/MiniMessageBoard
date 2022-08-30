@@ -101,3 +101,11 @@ textarea {
 .submit-btn {
   font-weight: bold;
 }
+
+.new-msg {
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 1rem;
+  background-color: whitesmoke;
+}
