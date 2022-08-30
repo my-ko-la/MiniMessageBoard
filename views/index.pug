@@ -1,5 +1,15 @@
 extends layout
 
+mixin messageBox(user,text,added)
+  .msg-box
+    p.user #{user}
+    p #{text}
+    p #{added}
+
 block content
-  h1= title
-  p Welcome to #{title}
+  .main
+    h1= title
+    p Welcome to #{title}
+
+    each ms in messages 
+        +messageBox(ms.user, ms.text, ms.added)
