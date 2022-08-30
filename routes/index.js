@@ -16,13 +16,13 @@ var datestring =
 
 const messages = [
   {
-    text: "Hi there!",
-    user: "Obi-Wan Kenobi",
+    text: "General Kenobi.",
+    user: "General Grievous",
     added: datestring,
   },
   {
-    text: "General Kenobi!",
-    user: "General Grievous",
+    text: "Hello there!",
+    user: "Obi-Wan Kenobi",
     added: datestring,
   },
 ];
